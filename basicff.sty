@@ -196,12 +196,12 @@
  enhanced=true,
  colframe = monoblack,
  drop fuzzy shadow,
- colback = black
- ]{#2}%
+ colback = black,
+ title=#2]{}%
  
 
      \inputminted[firstline=#5,lastline=#6, 
-     linenos=true, framesep=2mm, mathescape, numbersep=5pt,tabsize=4,formatcom=\color{white},%fontsize=\footnotesize, 
+     linenos=false, framesep=2mm, breaklines=true, mathescape, numbersep=5pt,tabsize=4,formatcom=\color{white},%fontsize=\footnotesize, 
 ]{#1}{#3}%
 
 \end{mintedbox}%

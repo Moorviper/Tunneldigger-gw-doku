@@ -1,0 +1,22 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends cm-super
+  texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+  python3-pygments texlive-lang-german texlive-doc-de texlive texlive-lang-german
+  texlive-doc-de texlive-latex-extra texlive-full python3-pygments python-pygments
+install: 
+script:
+- mkdir _build
+- pdflatex -shell-escape -interaction=nonstopmode -synctex=1 -halt-on-error -output-directory _build l2tpgw-doku.tex
+- pdflatex -shell-escape -interaction=nonstopmode -synctex=1 -halt-on-error -output-directory _build l2tpgw-doku.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: ExN3k2POlOCtS1ZOeeu7w7VZsilUadHTY+rr2+gG219ZfxP0QIVEmPLzIpLoJxTRCMixd1N5E1uqfW143J6RzMvV4Xrm01o6sN222sH2UJhaeQwCqjiry02nQ5ZYcScvGa2FBWnj2gUmfKo9GN7/98RNBEARSDhpHq6HezQyhkcniJGWYXMNwvLHxhW5XHjBjlf25SVdJmGcs7W1/rX62oWDknDJS3rlXFhOwhwOPw+Rqr3hTxAWfXwfDJkVgLugYpq03KZ0TY7qQbKk/4LQleMJJvZYxyRkUZzE/lniHpxrXjv0Y76KchheTrWjMRS6RjWUPZTjd1ovhBCH+TEM9ZzIzCz0MTFBEcwBJcYdfutuu2jg5k/CxtIGc9HgdPgK0zZF7n1fNfyX7/ZYkHCzRsmhW+K6jDuKwBYAUN9Hhs3x3Cob7APkqgEDkLui/PiSYrZ5xdKrLybx5RI0RyGYdtjTSlzHdGz/UUB9ypjOTi8sAEFtTMQJ4Etj7i35E9FDk9HUfBZesjqaLMiRvWcvk34qoF4yfeEDLuMZKHrgQL85z6QLDq6NDoZOThWb27/0hW70uPg90ZOTcUkI20/y5fNdUQIuugMG149OGBaQ3UlNSRmNM7FsxTTHtc43sD1QE46nnwwDCgkAYfbbf5C9C7CURmoMWypW/573VQr6Ers=
+  file: _build/l2tpgw-doku.pdf
+  skip_cleanup: true
+  on:
+    repo: tunnelhoshi/Tunneldigger-gw-doku
+    tags: true
+    all_branches: true

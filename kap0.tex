@@ -28,25 +28,25 @@ Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
 \section{Tunneldigger}
 \subsection{Was ist das Ziel ?}
 
-\monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{true}{1}{9999999}
-\monocodebox{sh}{brctl}{./command/brctlEmpty}{true}{1}{9999999}
+\monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{false}{1}{9999999}
+\monocodebox{sh}{brctl}{./command/brctlEmpty}{false}{1}{9999999}
 
 
 
 \subsection{Die Tunneldigger Bridge}
-\monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{true}{1}{9999999}
+\monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{false}{1}{9999999}
 
 \subsubsection{Starten des Brokers}
-\monocodebox{sh}{/srv/tunneldigger/start-broker.sh}{./srv/tunneldigger/start-broker.sh}{true}{1}{9999999}
+\monocodebox{sh}{/srv/tunneldigger/start-broker.sh}{./srv/tunneldigger/start-broker.sh}{false}{1}{9999999}
  
 \subsubsection{Beim Aufbau einer Verbindung}
-\monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{true}{1}{9999999}
+\monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{false}{1}{9999999}
 
 \subsubsection{Beim Abbau einer Verbindung}
-\monocodebox{sh}{/srv/tunneldigger/scripts/session-pre-down.sh}{./srv/tunneldigger/scripts/session-pre-down.sh}{true}{1}{9999999}
+\monocodebox{sh}{/srv/tunneldigger/scripts/session-pre-down.sh}{./srv/tunneldigger/scripts/session-pre-down.sh}{false}{1}{9999999}
 
 \subsubsection{Beim Boot}
-\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{true}{1}{9999999}
+\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{false}{1}{9999999}
 
 
 \subsection{Konfiguration von AirVPN}
@@ -73,12 +73,12 @@ startet den Tunnel bei jeden boot.
 
 
 
-% \monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{true}{1}{9999999}
+% \monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{false}{1}{9999999}
 
 
-% \monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{true}{1}{9999999}
+% \monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{false}{1}{9999999}
 
-% \monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{true}{1}{9999999}
+% \monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{false}{1}{9999999}
 
 
 

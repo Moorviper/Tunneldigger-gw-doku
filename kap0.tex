@@ -36,13 +36,17 @@ Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
 \subsection{Die Tunneldigger Bridge}
 \monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{true}{1}{9999999}
 
+\subsubsection{Starten des Brokers}
 \monocodebox{sh}{/srv/tunneldigger/start-broker.sh}{./srv/tunneldigger/start-broker.sh}{true}{1}{9999999}
  
-
+\subsubsection{Beim Aufbau einer Verbindung}
 \monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{true}{1}{9999999}
+
+\subsubsection{Beim Abbau einer Verbindung}
 \monocodebox{sh}{/srv/tunneldigger/scripts/session-pre-down.sh}{./srv/tunneldigger/scripts/session-pre-down.sh}{true}{1}{9999999}
 
-
+\subsubsection{Beim Boot}
+\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{true}{1}{9999999}
 
 
 \subsection{Konfiguration von AirVPN}

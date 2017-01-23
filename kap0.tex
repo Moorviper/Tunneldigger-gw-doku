@@ -13,7 +13,7 @@ Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
    \item  Ubuntu 16.04 LTS 
    \item  Batman-adv (Kernelmodul -> Einfach laden)
    \item  isc-dhcpd (DCHP-Server für IPv4 Adressen)
-   \item  radav (DHCP-Server für IPv6)
+   % \item  radav (DHCP-Server für IPv6)
 \end{enumerate}
 
 % \subsection{Vorraussetzung}
@@ -31,7 +31,8 @@ Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
 \monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{false}{1}{9999999}
 \monocodebox{sh}{brctl}{./command/brctlEmpty}{false}{1}{9999999}
 
-
+\subsection{Welche Kernelmodule müssen geladen werden}
+\monocodebox{sh}{/etc/modules}{./etc/modules}{false}{1}{9999999}
 
 \subsection{Die Tunneldigger Bridge}
 \monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{false}{1}{9999999}
@@ -48,26 +49,32 @@ Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
 \subsubsection{Beim Boot}
 \monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{false}{1}{9999999}
 
+\subsubsection{Beim Boot}
+\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{false}{1}{9999999}
 
-\subsection{Konfiguration von AirVPN}
+\subsubsection{DHCP-Server für IPv4:}
+\monocodebox{sh}{/etc/dhcp/dhcpd.conf}{./etc/dhcp/dhcpd.conf}{false}{1}{9999999}
 
-sudo apt-get install openvpn
 
-Bei Air VPN eine Konfig datei erstellen und  in /etc/openvpn/airvpn.conf speichern.
-Als standard biegt die config aber alle routen auf das VPN Interface um. Damit ist der Server hinter einem NAT und per SSH nichtmehr zu erreichen. 
-Deshalb sollten die Routen automatisch erstellt werden und die Zeile
-route-delay 5 <- bei mir war es in der airvpn-config nicht drin...
-auskommentiert und
+% \subsection{Konfiguration von AirVPN}
 
-route-noexec
+% sudo apt-get install openvpn
 
-ergänzt werden.
+% Bei Air VPN eine Konfig datei erstellen und  in /etc/openvpn/airvpn.conf speichern.
+% Als standard biegt die config aber alle routen auf das VPN Interface um. Damit ist der Server hinter einem NAT und per SSH nichtmehr zu erreichen. 
+% Deshalb sollten die Routen automatisch erstellt werden und die Zeile
+% route-delay 5 <- bei mir war es in der airvpn-config nicht drin...
+% auskommentiert und
 
-ein 
-sudo service openvpn start 
-startet den Tunnel
-sudo update-rc.d openvpn defaults
-startet den Tunnel bei jeden boot.
+% route-noexec
+
+% ergänzt werden.
+
+% ein 
+% sudo service openvpn start 
+% startet den Tunnel
+% sudo update-rc.d openvpn defaults
+% startet den Tunnel bei jeden boot.
 
 
 

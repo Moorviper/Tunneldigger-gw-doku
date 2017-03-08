@@ -8,7 +8,7 @@ before_install:
 install: 
 script:
 - mkdir _build
-- arara l2tpgw-doku.tex
+- arara l2tpgw-doku.tex -v
 deploy:
   provider: releases
   api_key:

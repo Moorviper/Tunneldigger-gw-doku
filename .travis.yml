@@ -8,10 +8,7 @@ before_install:
 install: 
 script:
 - mkdir _build
-- pdflatex -shell-escape -interaction=nonstopmode -synctex=1 -halt-on-error -output-directory
-  _build l2tpgw-doku.tex
-- pdflatex -shell-escape -interaction=nonstopmode -synctex=1 -halt-on-error -output-directory
-  _build l2tpgw-doku.tex
+- arara l2tpgw-doku.tex
 deploy:
   provider: releases
   api_key:

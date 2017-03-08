@@ -1,11 +1,20 @@
-\documentclass[11pt, a4paper,ngerman]{article}
+% arara: lualatex: { shell: yes, synctex: yes,  options: "-output-directory=_build" }
+% arara: lualatex: { shell: yes, synctex: yes,  options: "-output-directory=_build"}
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+\usepackage{mwe}
+\usepackage{luacode}
+\usepackage{shellesc}
+% \documentclassw[11pt, a4paper,ngerman]{article}
 \usepackage{basicff}
 
 \usetikzlibrary{patterns} % preamble
 \tcbuselibrary{skins} % preamble
 
 \usepackage{tikz}
-\usepackage{PTSansNarrow}
+% \usepackage{PTSansNarrow}
 \usetikzlibrary{matrix}
 
 \usepackage{pgfplots} 
@@ -16,7 +25,14 @@
 \newenvironment{proggen}{\begin{center}}{\end{center}}
 
 \usepackage{array}
+% \setmainfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
+% \setsansfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
+% \setmonofont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 
+
+\setmainfont{helveticaneue.ttf}
+\setsansfont{helveticaneue.ttf}
+\setmonofont{helveticaneue.ttf}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -66,6 +82,17 @@ Tunneldigger
 % \input{todo.tex}
 \newpage
 \section{Überblick Installation eines Tunneldigger-Gateways bei Online.net}
+
+
+% \begin{displaymath}
+%   E = \frac{m_{0} c^{2}}{\sqrt{1-v^{2}/c^{2}}}
+% \end{displaymath}
+
+% \begin{luacode}
+%   for x=1,600 do
+%     tex.print(x+2)
+%   end
+% \end{luacode}
 \input{kap0.tex}
 % \input{kap1.tex}
 

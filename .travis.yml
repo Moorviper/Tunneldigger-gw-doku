@@ -11,7 +11,6 @@ before_install:
   python3-pygments texlive-lang-german texlive-doc-de texlive texlive-lang-german
   texlive-doc-de texlive-latex-extra texlive-full python3-pygments python-pygments
 - tlmgr init-usertree
-- tlmgr install arara
 install:
 script:
 - mkdir _build

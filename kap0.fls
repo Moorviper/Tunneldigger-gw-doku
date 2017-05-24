@@ -1,0 +1,6 @@
+PWD /Users/danielkrah/Documents/GITHUB-REPOS'S/Tunneldigger-gw-doku
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/danielkrah/Documents/GITHUB-REPOS'S/Tunneldigger-gw-doku/kap0.tex
+OUTPUT /Users/danielkrah/Documents/GITHUB-REPOS'S/Tunneldigger-gw-doku/kap0.log

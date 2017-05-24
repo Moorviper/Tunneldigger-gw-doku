@@ -1,8 +1,10 @@
-% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
-% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
+% arara: lualatex: { shell: yes, action: nonstopmode, synctex: yes}
+% arara: lualatex: { shell: yes, action: nonstopmode, synctex: yes}
+% asarara: lualatex: { shell: yes, action: nonstopmode, synctex: yes,  options: "-output-directory=_build"}
+% asarara: lualatex: { shell: yes, action: nonstopmode, synctex: yes,  options: "-output-directory=_build"}
 \documentclass{article}
 \usepackage[ngerman]{babel}
-\usepackage{fontspec}
+\usepackage[no-math]{fontspec}
 
 \usepackage{mwe}
 \usepackage{luacode}
@@ -17,8 +19,8 @@
 % \usepackage{PTSansNarrow}
 \usetikzlibrary{matrix}
 
-\usepackage{pgfplots} 
-\pgfplotsset{ 
+\usepackage{pgfplots}
+\pgfplotsset{
  compat=newest
   }
 \tcbset{colframe=red!75!black}
@@ -28,11 +30,13 @@
 % \setmainfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 % \setsansfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 % \setmonofont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
+% \usepackage{datetime}
+% \pagestyle{fancy}
 
 
-\setmainfont{helveticaneue.ttf}
-\setsansfont{helveticaneue.ttf}
-\setmonofont{helveticaneue.ttf}
+\setmainfont{UbuntuL.ttf}
+\setsansfont{UbuntuR.ttf}
+\setmonofont{UbuntuMonoR.ttf}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -44,16 +48,23 @@
  % \color{white}
  % $\bullet$ \\
  \color{black}
-L2TP Gateway Doku\\
-Tunneldigger
+ Mitschrift \\
+Datenbanken \\
+Peinl \\
+\color{white}
+$\bullet$ \\
+\color{black}
  \begin{center}
-	% \includegraphics[scale=0.5]{./pictures/wohnzimmer.png}
+	% \includegraphics[scale=0.5]{./pictures/CaptainWarschburger.jpg}
 \end{center}
  % \includegraphics{./pictures/wohnzimmer.png}
 }
 % \includegraphics{./pictures/asrock.png} Q1900M \\ \color{white} $\bullet$ \\ $\bullet$ \\ $\bullet$ \\ \color{black} \\ \apple \\ 10.10.3
 
 \author{Daniel Krah}
+% \rfoot{Compiled on \today\ at \currenttime}
+% \cfoot{}
+% \lfoot{Page \thepage}
 % \date{1.6.2015}
 
 \begin{document}
@@ -81,7 +92,7 @@ Tunneldigger
 %  To Do
 % \input{todo.tex}
 \newpage
-\section{Überblick Installation eines Tunneldigger-Gateways bei Online.net}
+\section{Überblick}
 
 
 % \begin{displaymath}
@@ -98,7 +109,7 @@ Tunneldigger
 
 
 
-% \input{dummy.tex} 
+% \input{dummy.tex}
 % \input{dummy.tex}
 % \input{dummy.tex}
 % \input{dummy.tex}
@@ -114,7 +125,7 @@ Tunneldigger
 % \input{kap3_vorl.tex}
 % \input{kap4_vorl.tex}
 % \input{kap5_vorl.tex}
-% \input{kap6_vorl.tex} 
+% \input{kap6_vorl.tex}
 % kapitel 7 im Buch
 
 %   Kapitel 2
@@ -142,7 +153,7 @@ Tunneldigger
 %=========================================================================================================================
 %
 %-------------END
-\end{document}  
+\end{document}
 
 
 
@@ -254,4 +265,3 @@ Tunneldigger
 % ÜüÖöÄä
 % \end{listingsbox}
 % Über
-

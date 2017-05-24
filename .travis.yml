@@ -14,12 +14,12 @@ before_install:
 install:
 script:
 - mkdir _build
-- arara l2tpgw-doku.tex -v
+- arara datenbanken.tex -v
 deploy:
   provider: releases
   api_key:
     secure: POceMo3tQ7yIZcxdOm3S35Vb1LC9NEkM4ja9AURGdYRfJLjG6K/O8MNywuAMkrGMa4MjHofGgQWy4K3+eHyjCHWl+wIJ3fvijmsU41zGQif+KkD5vvmfM9n3Xx3mSzdgrjyzZsPkWeQkVpcsmvp466zc1A7Q+U6/WUQqDMGqsPInrOWm51ttgzYKDJ3o/h8lnCDqtudSbjONalSiTPTs/EeqU/ruLRDyk0FkPtBzzU3L5gqP4H+bTJtxJR3vSyQaFw1lwJ/Kcy+OXw8tpHbOc+lAl6CrKYPcjhb4dtrlkCySV0UScvsdbna5S+fE0dZh6H+SBSHtC5soWUdqZleVxq9B01CecI0ZYjGhxbieieDEGTvHwy2rsH1jlBiJXVFBIbjvebM1P8zYaEx98ytaVtd9P3/jeDHVU848iTOBkjcGIxq44XAHS/2TNMnypLkvscrlKuI95UwhPieUPBR5zjc00ljadWmzh45t7d0dy6QZ9jIMFxE7ca7dtaBcoN0mMgBNTUtBfBzEbh9ZpD+2+IcEz8shfIP41N96MYRt/wYfGDveGXeAOdytuTvd+e6yxeInPigcVi0enX/xaRYmMzsSDYVe1pAwv3Y9DafIugI7FbQ3lCd4HcN/JhWWjEckjPPTV8nQCxT4/UFXB0RyKSQCo5RBsUN3zYdP+4EYSC0=
-  file: _build/l2tpgw-doku.pdf
+  file: _build/datenbanken.pdf
   skip_cleanup: true
   on:
     repo: tunnelhoshi/Tunneldigger-gw-doku

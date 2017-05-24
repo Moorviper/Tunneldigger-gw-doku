@@ -1,0 +1,4 @@
+{
+     "root" : "./BWL2017WARSCHBURGER.tex",
+     "toolchain" : "%TEX %ARG,
+     }

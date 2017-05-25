@@ -1,4 +1,4 @@
 {
-     "root" : "./BWL2017WARSCHBURGER.tex",
+     "root" : "./datenbanken.tex“,
      "toolchain" : "%TEX %ARG,
      }

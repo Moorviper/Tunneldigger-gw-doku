@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+brctl show
+bridge name	bridge id		STP enabled	interfaces
+tunneldigger		8000.0abeef250001	no	
+\end{Verbatim}

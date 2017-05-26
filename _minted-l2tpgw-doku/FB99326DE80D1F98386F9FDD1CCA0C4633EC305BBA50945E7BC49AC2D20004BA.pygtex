@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+...
+\PYG{c+c1}{\PYGZsh{} The ddns\PYGZhy{}updates\PYGZhy{}style parameter controls whether or not the server will}
+\PYG{c+c1}{\PYGZsh{} attempt to do a DNS update when a lease is confirmed. We default to the}
+\PYG{c+c1}{\PYGZsh{} behavior of the version 2 packages (\PYGZsq{}none\PYGZsq{}, since DHCP v2 didn\PYGZsq{}t}
+\PYG{c+c1}{\PYGZsh{} have support for DDNS.)}
+ddns\PYGZhy{}update\PYGZhy{}style none\PYG{p}{;}
+
+\PYG{c+c1}{\PYGZsh{} option definitions common to all supported networks...}
+option domain\PYGZhy{}name \PYG{l+s+s2}{\PYGZdq{}tunnelhoshi.net\PYGZdq{}}\PYG{p}{;}
+\PYG{c+c1}{\PYGZsh{}option domain\PYGZhy{}name\PYGZhy{}servers ns1.example.org, ns2.example.org;}
+
+default\PYGZhy{}lease\PYGZhy{}time 600\PYG{p}{;}
+max\PYGZhy{}lease\PYGZhy{}time 7200\PYG{p}{;}
+
+\PYG{c+c1}{\PYGZsh{} If this DHCP server is the official DHCP server for the local}
+\PYG{c+c1}{\PYGZsh{} network, the authoritative directive should be uncommented.}
+\PYG{c+c1}{\PYGZsh{}authoritative;}
+
+\PYG{c+c1}{\PYGZsh{} Use this to send dhcp log messages to a different log file (you also}
+\PYG{c+c1}{\PYGZsh{} have to hack syslog.conf to complete the redirection).}
+log\PYGZhy{}facility local7\PYG{p}{;}
+
+
+
+\PYG{c+c1}{\PYGZsh{} A slightly different configuration for an internal subnet.}
+subnet 10.185.0.0 netmask 255.255.192.0 \PYG{o}{\PYGZob{}}
+  authoritative\PYG{p}{;}
+  range 10.185.0.100 10.185.0.200\PYG{p}{;}
+  option domain\PYGZhy{}name\PYGZhy{}servers 8.8.8.8\PYG{p}{;}
+ \PYG{c+c1}{\PYGZsh{} option domain\PYGZhy{}name \PYGZdq{}internal.example.org\PYGZdq{};}
+  option subnet\PYGZhy{}mask 255.255.255.0\PYG{p}{;}
+  option routers 10.185.0.1\PYG{p}{;}
+  option interface\PYGZhy{}mtu 1332\PYG{p}{;}
+\PYG{c+c1}{\PYGZsh{}  option broadcast\PYGZhy{}address 10.5.5.31;}
+\PYG{c+c1}{\PYGZsh{}  default\PYGZhy{}lease\PYGZhy{}time 600;}
+\PYG{c+c1}{\PYGZsh{}  max\PYGZhy{}lease\PYGZhy{}time 7200;}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

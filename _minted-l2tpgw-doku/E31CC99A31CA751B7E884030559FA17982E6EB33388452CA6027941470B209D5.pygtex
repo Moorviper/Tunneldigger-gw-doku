@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} Tunneldigger VPN Interface}
+auto tunneldigger
+iface tunneldigger inet manual
+        \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Bring up interface}
+        pre\PYGZhy{}up brctl addbr \PYG{n+nv}{\PYGZdl{}IFACE}
+        pre\PYGZhy{}up ip link \PYG{n+nb}{set} address 0A:BE:EF:25:00:01 dev \PYG{n+nv}{\PYGZdl{}IFACE}
+        pre\PYGZhy{}up ip link \PYG{n+nb}{set} dev \PYG{n+nv}{\PYGZdl{}IFACE} mtu 1364
+        pre\PYGZhy{}up ip link \PYG{n+nb}{set} \PYG{n+nv}{\PYGZdl{}IFACE} promisc on
+        up ip link \PYG{n+nb}{set} dev \PYG{n+nv}{\PYGZdl{}IFACE} up
+        post\PYGZhy{}up ebtables \PYGZhy{}A FORWARD \PYGZhy{}\PYGZhy{}logical\PYGZhy{}in \PYG{n+nv}{\PYGZdl{}IFACE} \PYGZhy{}j DROP
+        post\PYGZhy{}up batctl \PYG{k}{if} add \PYG{n+nv}{\PYGZdl{}IFACE}
+        \PYG{c+c1}{\PYGZsh{} Shutdown interface}
+        pre\PYGZhy{}down batctl \PYG{k}{if} del \PYG{n+nv}{\PYGZdl{}IFACE}
+        pre\PYGZhy{}down ebtables \PYGZhy{}D FORWARD \PYGZhy{}\PYGZhy{}logical\PYGZhy{}in \PYG{n+nv}{\PYGZdl{}IFACE} \PYGZhy{}j DROP
+        down ip link \PYG{n+nb}{set} dev \PYG{n+nv}{\PYGZdl{}IFACE} down
+        post\PYGZhy{}down brctl delbr \PYG{n+nv}{\PYGZdl{}IFACE}
+\end{Verbatim}

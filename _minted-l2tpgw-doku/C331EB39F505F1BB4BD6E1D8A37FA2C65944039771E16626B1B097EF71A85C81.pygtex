@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{n+nv}{WDIR}\PYG{o}{=}/srv/tunneldigger
+\PYG{n+nv}{VIRTUALENV\PYGZus{}DIR}\PYG{o}{=}/srv/tunneldigger
+
+\PYG{n+nb}{cd} \PYG{n+nv}{\PYGZdl{}WDIR}
+\PYG{n+nb}{source} \PYG{n+nv}{\PYGZdl{}VIRTUALENV\PYGZus{}DIR}/bin/activate
+
+python broker/l2tp\PYGZus{}broker.py l2tp\PYGZus{}broker.cfg
+\end{Verbatim}

@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{n+nv}{INTERFACE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}3}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{n+nv}{UUID}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}8}\PYG{l+s+s2}{\PYGZdq{}}
+
+log\PYGZus{}message\PYG{o}{()} \PYG{o}{\PYGZob{}}
+      \PYG{n+nv}{message}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
+      logger \PYGZhy{}p \PYG{l+m}{6} \PYGZhy{}t \PYG{l+s+s2}{\PYGZdq{}Tunneldigger\PYGZdq{}} \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}message}\PYG{l+s+s2}{\PYGZdq{}}
+      \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}message}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{|} systemd\PYGZhy{}cat \PYGZhy{}p info \PYGZhy{}t \PYG{l+s+s2}{\PYGZdq{}Tunneldigger\PYGZdq{}}
+      \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}} 1\PYGZgt{}\PYG{p}{\PYGZam{}}2
+\PYG{o}{\PYGZcb{}}
+
+\PYG{k}{if} /bin/grep \PYGZhy{}Fq \PYG{n+nv}{\PYGZdl{}UUID} /srv/tunneldigger/blacklist.txt\PYG{p}{;} \PYG{k}{then}
+      log\PYGZus{}message \PYG{l+s+s2}{\PYGZdq{}New client with UUID=}\PYG{n+nv}{\PYGZdl{}UUID}\PYG{l+s+s2}{ is blacklisted, not adding to tunneldigger bridge interface\PYGZdq{}}
+\PYG{k}{else}
+      log\PYGZus{}message \PYG{l+s+s2}{\PYGZdq{}New client with UUID=}\PYG{n+nv}{\PYGZdl{}UUID}\PYG{l+s+s2}{ connected, adding to tunneldigger bridge interface\PYGZdq{}}
+      ip link \PYG{n+nb}{set} dev \PYG{n+nv}{\PYGZdl{}INTERFACE} up mtu 1364
+      /sbin/brctl addif tunneldigger \PYG{n+nv}{\PYGZdl{}INTERFACE}
+\PYG{k}{fi}
+\end{Verbatim}

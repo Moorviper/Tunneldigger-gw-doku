@@ -1,0 +1,98 @@
+\subsection{Benötigt:}
+\subsubsection{Hardware}
+  \begin{enumerate}
+    \item Server mit schnellem garantiertem Upload\\
+          In diesem Fall eine Dedibox SC mit 2,5 Gbit \\
+          (ca 380 Mbit Upload dauerhaft verfügbar)
+    \item Einen Uplink ans Backbone des Freifunk Rheinland da der Prozessor zu schwach ist um mehr als 35 Mbit über openVPN zu drücken.  
+  \end{enumerate}
+
+\subsubsection{Software}
+Softwareseitig werden folgende Pakete/Kernelmodule verwendet:
+\begin{enumerate} 
+   \item  Ubuntu 16.04 LTS 
+   \item  Batman-adv (Kernelmodul -> Einfach laden)
+   \item  isc-dhcpd (DCHP-Server für IPv4 Adressen)
+   % \item  radav (DHCP-Server für IPv6)
+\end{enumerate}
+
+% \subsection{Vorraussetzung}
+
+% \begin{itemize} 
+%    \item Netzwerkinterface ins Internet eth0
+%    \item Netzwerkinterface für VPN mesh-vpn
+%    \item Netzwerkinterface für Batman: bat0
+%    \item Client IPv4 Netz 10.185.8.0/21 
+% \end{itemize}
+
+\section{Tunneldigger}
+\subsection{Was ist das Ziel ?}
+
+\monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{false}{1}{9999999}
+\monocodebox{sh}{brctl}{./command/brctlEmpty}{false}{1}{9999999}
+
+\subsection{Welche Kernelmodule müssen geladen werden}
+\monocodebox{sh}{/etc/modules}{./etc/modules}{false}{1}{9999999}
+
+\subsection{Die Tunneldigger Bridge}
+\monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{false}{1}{9999999}
+
+\subsubsection{Starten des Brokers}
+\monocodebox{sh}{/srv/tunneldigger/start-broker.sh}{./srv/tunneldigger/start-broker.sh}{false}{1}{9999999}
+ 
+\subsubsection{Beim Aufbau einer Verbindung}
+\monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{false}{1}{9999999}
+
+\subsubsection{Beim Abbau einer Verbindung}
+\monocodebox{sh}{/srv/tunneldigger/scripts/session-pre-down.sh}{./srv/tunneldigger/scripts/session-pre-down.sh}{false}{1}{9999999}
+
+\subsubsection{Beim Boot}
+\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{false}{1}{9999999}
+
+\subsubsection{Beim Boot}
+\monocodebox{sh}{/usr/local/bin/bat-startup.sh}{./usr/local/bin/bat-startup.sh}{false}{1}{9999999}
+
+\subsubsection{DHCP-Server für IPv4:}
+\monocodebox{sh}{/etc/dhcp/dhcpd.conf}{./etc/dhcp/dhcpd.conf}{false}{1}{9999999}
+
+
+% \subsection{Konfiguration von AirVPN}
+
+% sudo apt-get install openvpn
+
+% Bei Air VPN eine Konfig datei erstellen und  in /etc/openvpn/airvpn.conf speichern.
+% Als standard biegt die config aber alle routen auf das VPN Interface um. Damit ist der Server hinter einem NAT und per SSH nichtmehr zu erreichen. 
+% Deshalb sollten die Routen automatisch erstellt werden und die Zeile
+% route-delay 5 <- bei mir war es in der airvpn-config nicht drin...
+% auskommentiert und
+
+% route-noexec
+
+% ergänzt werden.
+
+% ein 
+% sudo service openvpn start 
+% startet den Tunnel
+% sudo update-rc.d openvpn defaults
+% startet den Tunnel bei jeden boot.
+
+
+
+
+
+% \monocodebox{sh}{/etc/network/interfaces.d/tunneldigger}{./etc/network/interfaces.d/tunneldigger}{false}{1}{9999999}
+
+
+% \monocodebox{sh}{/srv/tunneldigger/scripts/session-up.sh}{./srv/tunneldigger/scripts/session-up.sh}{false}{1}{9999999}
+
+% \monocodebox{sh}{ifconfig}{./command/ifconfigVpnBatTD.sh}{false}{1}{9999999}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} /etc/modules: kernel modules to load at boot time.}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} This file contains the names of kernel modules that should be loaded}
+\PYG{c+c1}{\PYGZsh{} at boot time, one per line. Lines beginning with \PYGZdq{}\PYGZsh{}\PYGZdq{} are ignored.}
+ebtables
+nf\PYGZus{}conntrack\PYGZus{}netlink
+nf\PYGZus{}conntrack
+nfnetlink
+l2tp\PYGZus{}netlink
+l2tp\PYGZus{}core
+batman\PYGZhy{}adv 
+\end{Verbatim}

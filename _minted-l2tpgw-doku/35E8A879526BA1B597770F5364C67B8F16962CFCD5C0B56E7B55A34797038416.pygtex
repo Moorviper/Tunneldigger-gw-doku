@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{n+nv}{INTERFACE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}3}\PYG{l+s+s2}{\PYGZdq{}}
+/sbin/brctl delif tunneldigger \PYG{n+nv}{\PYGZdl{}INTERFACE}
+\PYG{n+nb}{exit} 0
+\end{Verbatim}

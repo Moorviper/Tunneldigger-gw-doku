@@ -1,13 +1,8 @@
-% arara: lualatex: { shell: yes, action: nonstopmode, synctex: yes}
-% arara: lualatex: { shell: yes, action: nonstopmode, synctex: yes}
-% asarara: lualatex: { shell: yes, action: nonstopmode, synctex: yes,  options: "-output-directory=_build"}
-% asarara: lualatex: { shell: yes, action: nonstopmode, synctex: yes,  options: "-output-directory=_build"}
+% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
+% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
 \documentclass{article}
 \usepackage[ngerman]{babel}
-\usepackage[no-math]{fontspec}
-
-\usepackage{longtable}
-\usepackage{booktabs}
+\usepackage{fontspec}
 
 \usepackage{mwe}
 \usepackage{luacode}
@@ -33,13 +28,11 @@
 % \setmainfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 % \setsansfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 % \setmonofont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
-% \usepackage{datetime}
-% \pagestyle{fancy}
 
 
-\setmainfont{UbuntuL.ttf}
-\setsansfont{UbuntuR.ttf}
-\setmonofont{UbuntuMonoR.ttf}
+\setmainfont{helveticaneue.ttf}
+\setsansfont{helveticaneue.ttf}
+\setmonofont{helveticaneue.ttf}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -51,23 +44,16 @@
  % \color{white}
  % $\bullet$ \\
  \color{black}
- Mitschrift \\
-Datenbanken \\
-Peinl \\
-\color{white}
-$\bullet$ \\
-\color{black}
+L2TP Gateway Doku\\
+Tunneldigger
  \begin{center}
-	% \includegraphics[scale=0.5]{./pictures/CaptainWarschburger.jpg}
+	% \includegraphics[scale=0.5]{./pictures/wohnzimmer.png}
 \end{center}
  % \includegraphics{./pictures/wohnzimmer.png}
 }
 % \includegraphics{./pictures/asrock.png} Q1900M \\ \color{white} $\bullet$ \\ $\bullet$ \\ $\bullet$ \\ \color{black} \\ \apple \\ 10.10.3
 
 \author{Daniel Krah}
-% \rfoot{Compiled on \today\ at \currenttime}
-% \cfoot{}
-% \lfoot{Page \thepage}
 % \date{1.6.2015}
 
 \begin{document}
@@ -95,9 +81,8 @@ $\bullet$ \\
 %  To Do
 % \input{todo.tex}
 \newpage
-\section{Überblick}
+\section{Überblick Installation eines Tunneldigger-Gateways bei Online.net}
 
-test it
 
 % \begin{displaymath}
 %   E = \frac{m_{0} c^{2}}{\sqrt{1-v^{2}/c^{2}}}
@@ -108,7 +93,7 @@ test it
 %     tex.print(x+2)
 %   end
 % \end{luacode}
-% \input{kap0.tex}
+\input{kap0.tex}
 % \input{kap1.tex}
 
 

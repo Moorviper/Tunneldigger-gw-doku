@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+ifconfig bat0 up 10.185.0.1/18
+ip rule add iif bat0 table ffrh
+ip rule add from 10.185.0.0/18 table ffrh
+ip rule add to 10.185.0.0/18 table ffrh
+sysctl \PYGZhy{}w net.ipv4.ip\PYGZus{}forward\PYG{o}{=}1
+sysctl \PYGZhy{}w net.ipv4.icmp\PYGZus{}errors\PYGZus{}use\PYGZus{}inbound\PYGZus{}ifaddr\PYG{o}{=}1
+iptables \PYGZhy{}A FORWARD \PYGZhy{}o tun+ \PYGZhy{}p tcp \PYGZhy{}m tcp \PYGZhy{}\PYGZhy{}tcp\PYGZhy{}flags SYN,RST SYN \PYGZhy{}j TCPMSS \PYGZhy{}\PYGZhy{}set\PYGZhy{}mss \PYG{l+m}{1292} \PYGZhy{}m comment \PYGZhy{}\PYGZhy{}comment \PYG{l+s+s2}{\PYGZdq{}ipv4\PYGZhy{}mss\PYGZhy{}fix\PYGZdq{}} \PYGZhy{}\PYGZhy{}mss 1293:1536
+iptables \PYGZhy{}t nat \PYGZhy{}A POSTROUTING \PYGZhy{}o tun0 \PYGZhy{}s 10.185.0.0/18 \PYGZhy{}j MASQUERADE
+\PYG{c+c1}{\PYGZsh{}iptables \PYGZhy{}t nat \PYGZhy{}A POSTROUTING \PYGZhy{}o eth0 \PYGZhy{}j MASQUERADE}
+batctl gw\PYGZus{}mode server 300mbit/300mbit
+systemctl restart isc\PYGZhy{}dhcp\PYGZhy{}server
+\PYG{c+c1}{\PYGZsh{} wait until vpn is connected}
+sleep 25
+ip route add 10.185.0.0/18 dev bat0 table ffrh
+ip route add default via 10.6.1.1 table ffrh
+\end{Verbatim}

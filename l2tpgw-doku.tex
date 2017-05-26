@@ -1,20 +1,11 @@
-% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
-% arara: lualatex: { shell: yes, synctex: yes, options: "-output-directory=_build", action: nonstopmode}
-\documentclass{article}
-\usepackage[ngerman]{babel}
-\usepackage{fontspec}
-
-\usepackage{mwe}
-\usepackage{luacode}
-\usepackage{shellesc}
-% \documentclassw[11pt, a4paper,ngerman]{article}
+\documentclass[11pt, a4paper,ngerman]{article}
 \usepackage{basicff}
 
 \usetikzlibrary{patterns} % preamble
 \tcbuselibrary{skins} % preamble
 
 \usepackage{tikz}
-% \usepackage{PTSansNarrow}
+\usepackage{PTSansNarrow}
 \usetikzlibrary{matrix}
 
 \usepackage{pgfplots}
@@ -25,14 +16,7 @@
 \newenvironment{proggen}{\begin{center}}{\end{center}}
 
 \usepackage{array}
-% \setmainfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
-% \setsansfont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
-% \setmonofont[Path=/Applications/Microsoft Word.app/Contents/Resources/Fonts/]{Calibri.ttf}
 
-
-\setmainfont{helveticaneue.ttf}
-\setsansfont{helveticaneue.ttf}
-\setmonofont{helveticaneue.ttf}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -82,59 +66,13 @@ Tunneldigger
 % \input{todo.tex}
 \newpage
 \section{Überblick Installation eines Tunneldigger-Gateways bei Online.net}
-
-
-% \begin{displaymath}
-%   E = \frac{m_{0} c^{2}}{\sqrt{1-v^{2}/c^{2}}}
-% \end{displaymath}
-
-% \begin{luacode}
-%   for x=1,600 do
-%     tex.print(x+2)
-%   end
-% \end{luacode}
 \input{kap0.tex}
 % \input{kap1.tex}
 
 
 
-% \input{dummy.tex}
-% \input{dummy.tex}
-% \input{dummy.tex}
-% \input{dummy.tex}
-
-% \input{prog1.tex}
 
 
-
-%  die beiden unteren beiden includen
-
-% \input{kap1_vorl.tex}
-% \input{kap2_vorl.tex}
-% \input{kap3_vorl.tex}
-% \input{kap4_vorl.tex}
-% \input{kap5_vorl.tex}
-% \input{kap6_vorl.tex}
-% kapitel 7 im Buch
-
-%   Kapitel 2
-
-% \input{2ndKap7.tex}
-
-
-
-
-%==============================================
-
-% % programmieren 2
-
-% \input{kap8.tex}
-% \input{kap9.tex}
-% \input{kap10.tex}
-% \input{kap11.tex}
-% \input{kap12.tex}
-% \input{last.tex}
-% \input{einfuerung.tex}
 
 
 
@@ -143,114 +81,3 @@ Tunneldigger
 %
 %-------------END
 \end{document}
-
-
-
-% \begin{Verbatim}[frame=lines,
-%        framerule=0.2mm,framesep=3mm,
-%        rulecolor=\color{monoorange},
-%        fillcolor=\color{monogreen},
-%        label=Kapitel 1,labelposition=topline]
-%   Name    :   Cubieboard 2
-%   Size    :   10 cm x 6 cm
-%   CPU     :   Allwinner A20 SoC (2 ARM-Cortex A7-Cores with 1 GHz)
-%   GPU     :   Mali-400MP2 (OpenGL ES 2.0/1.1)
-%   VPU     :   CedarX (max 2160p (Ultra HD))
-%   RAM     :   512MB (Test) / 1GB (Produktion) DDR3
-%   CONN    :   2x USB Host, 1x USB On-the-go, 1x CIR, 1x SATA
-%   VID-OUT :   HDMI @ 1080p
-%   AUD-OUT :   S/PDIF, Headphone, HDMI-Audio
-%   AUD-IN  :   Mikrophone, Line-In
-%   Storage :   4 GB NAND-Flash, 1x MicroSD
-%   Network :   10/100-Ethernet
-%   DB-Con. :   96 Pin incl IÂ²C, SPI, LVDS
-% \end{Verbatim}
-
-
-
-
-
-
-
-
-% z23dsdsdsdsd
-% \color{red}
-% \shiftkey
-% \capslockkey
-% \ejectkey
-% \pencilkey
-% \returnkey
-% \revreturnkey
-% \cubie
-% \cubiebig
-% \archlinux \\
-
-% \subsection{Notes}
-% \infobox{Notes}{
-% $\ $\\
-%  \centering
-% vdpau-sunxi is still in development. \\
-% $\ $\\
-% $\ $\\
-% }{$\ $}
-
-
-
-%hjhjj
- % \input{aufgabe29.tex}
-
-
-
-
-
-
-
-% sss
-
-
-
-% \newpage
-% 18.2.
-
-% klausur
-
-% 10:15 - 11:45
-
-% ssdddsd
-
-% 26. Das Projekt Technischer Kundendienst liegt in der Version 3 im Verzeichnis O:\Paul\ Programmierung1\Projekte \Kapitel5, bzw. in S2T. \\
-
-% a. Kopieren Sie das Projekt in Ihr Verzeichnis. Machen Sie sich mit dem Projekt vertraut und spielen Sie die Anwendung durch. \\
-% b. Schauen Sie sich die Klasse Beantworter an. Erklären Sie Ihrem Nachbarn den Ablauf der Methode generiereAntwort() der Klasse Beantworter und den genauen Zweck der Sammlung AntwortMap. \\
-
-% c. Stellen Sie sich vor, eine HashMap hätte für die vorliegende Anwendung nicht zur Verfügung gestanden. Hätte man die Aufgabe auch mit einer ArrayList lösen können? \\
-% Überlegen Sie sich mit Ihrem Nachbarn, wie eine solche alternative Lösung im Prinzip aussehen würde. \\
-
-
-% 27. Der Umgang mit Zeichenketten vom Typ String soll an Hand einiger typischer Aufga- ben durchgespielt werden. Nehmen Sie für die folgenden Aufgaben die Dokumentation der Klasse String zur Hand. \\
-
-% a. Kopieren Sie das Projekt Zeichenketten aus dem O:\Paul\Programmierung1\Projekte\ Kapitel05.
-% b. Die Klasse StringBearbeitung enthält zahlreiche Methodenentwürfe, deren Implementie- rung noch fehlt. Die Aufgabe der jeweiligen Methode ist in der Kommentierung be- schrieben. Ergänzen Sie den zugehörigen Programmcode. Verwenden Sie dazu Metho- den der Klasse String. Die notwendigen Informationen entnehmen Sie der Dokumentati- on der Klasse String.
-% Testen Sie Ihren Programmcode ausgiebig. \\
-
-
-
-
-% \newpage
-% \input{ha-aufgabe1.tex}
-% \input{ha-aufgabe2.tex}
-% \input{ha-aufgabex.tex}
-
-
-% \lstset{language=Ruby, basicstyle=\scriptsize}
-% \begin{lstlisting}
-% **** ÄÜÖ
-% new car ; dsgjhdsjkghsjdg sjkhgjsfdhg sdjkfghjfkdshgjfsd hjkfdsghjfsdkhgsd hjkfdsgjksfdhgjfsdh jkdfsghfjdsgh dfsj
-% sdgnjsdgds dsgdsjgsk sdghsjghsjg sgjhfjkhsdjkhgjksdfhgjksfdlg hjkdfshgjfdhsg dsghfdskghfdjskhgsdfjkhfdgfdjhgjklfdhgjkfdhgjfdhgjkfdghdkfjghdfjk
-% \end{lstlisting}
-
-% \begin{listingsbox}{myjava}{Test üÜöÖäÄ}
-% test
-% ÜüÖöÄä
-% \end{listingsbox}
-% Über
